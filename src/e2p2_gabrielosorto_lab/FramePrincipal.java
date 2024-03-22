@@ -1,6 +1,7 @@
 package e2p2_gabrielosorto_lab;
 
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 public class FramePrincipal extends javax.swing.JFrame {
     
@@ -42,7 +43,7 @@ public class FramePrincipal extends javax.swing.JFrame {
         jLabel17 = new javax.swing.JLabel();
         jt_MarcaCarro = new javax.swing.JTextField();
         jLabel18 = new javax.swing.JLabel();
-        jSpinner2 = new javax.swing.JSpinner();
+        jsp_velocidad = new javax.swing.JSpinner();
         jb_crearCarro1 = new javax.swing.JButton();
         Carrera = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
@@ -194,7 +195,7 @@ public class FramePrincipal extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_CrearCarrosLayout.createSequentialGroup()
                         .addGroup(jp_CrearCarrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel16)
-                            .addComponent(jSpinner2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jsp_velocidad, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jb_crearCarro1, javax.swing.GroupLayout.Alignment.LEADING))
                         .addGap(153, 153, 153))))
             .addGroup(jp_CrearCarrosLayout.createSequentialGroup()
@@ -228,7 +229,7 @@ public class FramePrincipal extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel16)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSpinner2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jsp_velocidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(31, 31, 31)
                 .addComponent(jb_crearCarro1)
                 .addContainerGap(57, Short.MAX_VALUE))
@@ -361,20 +362,23 @@ public class FramePrincipal extends javax.swing.JFrame {
     private void jb_CrearCarroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_CrearCarroMouseClicked
         jp_fondo.setVisible(false);
         jp_CrearCarros.setVisible(true);
-        String marcaCarro = jt_MarcaCarro.getText();
-        String modeloCarro = jt_ModeloCarro.getText();
-        
     }//GEN-LAST:event_jb_CrearCarroMouseClicked
 
     private void jb_crearCarro1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_crearCarro1MouseClicked
-        // TODO add your handling code here:
+        String marcaCarro = jt_MarcaCarro.getText();
+        String modeloCarro = jt_ModeloCarro.getText();
+        int velocidadCarro = (Integer) jsp_velocidad.getValue();
+        Carro carronuevo = new Carro(marcaCarro, modeloCarro, velocidadCarro);
+        carros.add(carronuevo);
+        JOptionPane.showMessageDialog(this, "Carro Creado con Exito!!");
+        jp_CrearCarros.setVisible(false);
+        jp_fondo.setVisible(true);
     }//GEN-LAST:event_jb_crearCarro1MouseClicked
 
     private void jb_IniciarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_IniciarMouseClicked
         jp_fondo.setVisible(false);
         jp_CrearCarros.setVisible(false);
         Carrera.setVisible(true);
-        
     }//GEN-LAST:event_jb_IniciarMouseClicked
     
     public static void main(String args[]) {
@@ -406,11 +410,6 @@ public class FramePrincipal extends javax.swing.JFrame {
             }
         });
     }
-    
-    public static void CrearNuevoCarro() {
-        
-    }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JProgressBar BarraCarro1;
     private javax.swing.JProgressBar BarraCarro2;
@@ -437,7 +436,6 @@ public class FramePrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JSpinner jSpinner2;
     private javax.swing.JButton jb_CrearCarro;
     private javax.swing.JButton jb_Iniciar;
     private javax.swing.JButton jb_crearCarro1;
@@ -450,6 +448,7 @@ public class FramePrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jl_VelocidadCarro2;
     private javax.swing.JPanel jp_CrearCarros;
     private javax.swing.JPanel jp_fondo;
+    private javax.swing.JSpinner jsp_velocidad;
     private javax.swing.JTextField jt_MarcaCarro;
     private javax.swing.JTextField jt_ModeloCarro;
     // End of variables declaration//GEN-END:variables

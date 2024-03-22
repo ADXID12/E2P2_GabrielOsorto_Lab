@@ -38,4 +38,9 @@ public class Carro {
         this.veocidad = veocidad;
     }
 
+    @Override
+    public String toString() {
+        return "Carro{" + "marca=" + marca + ", modelo=" + modelo + ", veocidad=" + veocidad + '}';
+    }
+
 }

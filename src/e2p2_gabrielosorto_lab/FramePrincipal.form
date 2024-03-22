@@ -383,7 +383,7 @@
                       <Group type="102" alignment="1" attributes="0">
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Component id="jLabel16" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="jSpinner2" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jsp_velocidad" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="jb_crearCarro1" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="153" max="-2" attributes="0"/>
@@ -428,7 +428,7 @@
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="jLabel16" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jSpinner2" min="-2" max="-2" attributes="0"/>
+                  <Component id="jsp_velocidad" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                   <Component id="jb_crearCarro1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="57" max="32767" attributes="0"/>
@@ -495,7 +495,7 @@
             <Property name="text" type="java.lang.String" value="Modelo"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JSpinner" name="jSpinner2">
+        <Component class="javax.swing.JSpinner" name="jsp_velocidad">
         </Component>
         <Component class="javax.swing.JButton" name="jb_crearCarro1">
           <Properties>
