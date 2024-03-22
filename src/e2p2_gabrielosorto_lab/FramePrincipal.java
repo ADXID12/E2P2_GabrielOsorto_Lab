@@ -12,11 +12,13 @@ public class FramePrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         jp_fondo = new javax.swing.JPanel();
+        jProgressBar1 = new javax.swing.JProgressBar();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jp_fondo.setBackground(new java.awt.Color(255, 255, 255));
         jp_fondo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jp_fondo.add(jProgressBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 270, 310, 20));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -67,6 +69,7 @@ public class FramePrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JProgressBar jProgressBar1;
     private javax.swing.JPanel jp_fondo;
     // End of variables declaration//GEN-END:variables
 }
