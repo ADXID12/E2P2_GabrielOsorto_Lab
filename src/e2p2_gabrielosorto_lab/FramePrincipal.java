@@ -1,16 +1,17 @@
 package e2p2_gabrielosorto_lab;
 
 import java.util.ArrayList;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 
 public class FramePrincipal extends javax.swing.JFrame {
-    
+
     public FramePrincipal() {
         initComponents();
         jp_CrearCarros.setVisible(false);
         Carrera.setVisible(false);
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -32,7 +33,7 @@ public class FramePrincipal extends javax.swing.JFrame {
         jl_VelocidadCarro1 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
-        JL_MarcaCarro2 = new javax.swing.JLabel();
+        jl_MarcaCarro2 = new javax.swing.JLabel();
         jl_ModeloCarro2 = new javax.swing.JLabel();
         jl_VelocidadCarro2 = new javax.swing.JLabel();
         jb_Iniciar = new javax.swing.JButton();
@@ -51,9 +52,9 @@ public class FramePrincipal extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
         jLabel11 = new javax.swing.JLabel();
         Carro1 = new javax.swing.JLabel();
-        BarraCarro2 = new javax.swing.JProgressBar();
-        Carro2 = new javax.swing.JLabel();
         BarraCarro1 = new javax.swing.JProgressBar();
+        Carro2 = new javax.swing.JLabel();
+        BarraCarro2 = new javax.swing.JProgressBar();
         IniciarCarrera = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -84,10 +85,19 @@ public class FramePrincipal extends javax.swing.JFrame {
         jLabel3.setText("Jugador 2");
         jp_fondo.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 100, -1, -1));
 
-        jc_Carro1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jc_Carro1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " " }));
+        jc_Carro1.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jc_Carro1ItemStateChanged(evt);
+            }
+        });
         jp_fondo.add(jc_Carro1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 170, -1));
 
-        jc_Carro2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jc_Carro2.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jc_Carro2ItemStateChanged(evt);
+            }
+        });
         jp_fondo.add(jc_Carro2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 130, 170, -1));
 
         jLabel4.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
@@ -134,8 +144,8 @@ public class FramePrincipal extends javax.swing.JFrame {
         jLabel13.setText("VELOCIDAD");
         jp_fondo.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, -1, -1));
 
-        JL_MarcaCarro2.setText("jLabel14");
-        jp_fondo.add(JL_MarcaCarro2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 210, -1, -1));
+        jl_MarcaCarro2.setText("jLabel14");
+        jp_fondo.add(jl_MarcaCarro2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 210, -1, -1));
 
         jl_ModeloCarro2.setText("jLabel15");
         jp_fondo.add(jl_ModeloCarro2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 270, -1, -1));
@@ -195,7 +205,6 @@ public class FramePrincipal extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_CrearCarrosLayout.createSequentialGroup()
                         .addGroup(jp_CrearCarrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel16)
-                            .addComponent(jsp_velocidad, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jb_crearCarro1, javax.swing.GroupLayout.Alignment.LEADING))
                         .addGap(153, 153, 153))))
             .addGroup(jp_CrearCarrosLayout.createSequentialGroup()
@@ -210,7 +219,10 @@ public class FramePrincipal extends javax.swing.JFrame {
                             .addComponent(jt_ModeloCarro)))
                     .addGroup(jp_CrearCarrosLayout.createSequentialGroup()
                         .addGap(153, 153, 153)
-                        .addComponent(jLabel18)))
+                        .addComponent(jLabel18))
+                    .addGroup(jp_CrearCarrosLayout.createSequentialGroup()
+                        .addGap(110, 110, 110)
+                        .addComponent(jsp_velocidad, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         jp_CrearCarrosLayout.setVerticalGroup(
@@ -259,6 +271,11 @@ public class FramePrincipal extends javax.swing.JFrame {
 
         IniciarCarrera.setForeground(new java.awt.Color(255, 255, 255));
         IniciarCarrera.setText("Iniciar");
+        IniciarCarrera.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                IniciarCarreraMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout CarreraLayout = new javax.swing.GroupLayout(Carrera);
         Carrera.setLayout(CarreraLayout);
@@ -291,8 +308,8 @@ public class FramePrincipal extends javax.swing.JFrame {
                         .addGap(228, 228, 228))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CarreraLayout.createSequentialGroup()
                         .addGroup(CarreraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(BarraCarro1, javax.swing.GroupLayout.PREFERRED_SIZE, 459, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(BarraCarro2, javax.swing.GroupLayout.PREFERRED_SIZE, 459, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(BarraCarro2, javax.swing.GroupLayout.PREFERRED_SIZE, 459, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(BarraCarro1, javax.swing.GroupLayout.PREFERRED_SIZE, 459, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(26, 26, 26))))
             .addGroup(CarreraLayout.createSequentialGroup()
                 .addGap(217, 217, 217)
@@ -313,11 +330,11 @@ public class FramePrincipal extends javax.swing.JFrame {
                 .addGap(31, 31, 31)
                 .addComponent(Carro1)
                 .addGap(18, 18, 18)
-                .addComponent(BarraCarro2, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(BarraCarro1, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(Carro2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(BarraCarro1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(BarraCarro2, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26)
                 .addComponent(IniciarCarrera)
                 .addContainerGap(43, Short.MAX_VALUE))
@@ -370,9 +387,26 @@ public class FramePrincipal extends javax.swing.JFrame {
         int velocidadCarro = (Integer) jsp_velocidad.getValue();
         Carro carronuevo = new Carro(marcaCarro, modeloCarro, velocidadCarro);
         carros.add(carronuevo);
+
+        DefaultComboBoxModel m = (DefaultComboBoxModel) jc_Carro1.getModel();
+        m.removeAllElements();
+        for (int i = 0; i < carros.size(); i++) {
+            m.addElement(carros.get(i));
+        }
+        DefaultComboBoxModel n = (DefaultComboBoxModel) jc_Carro2.getModel();
+        n.removeAllElements();
+        for (int i = 0; i < carros.size(); i++) {
+            n.addElement(carros.get(i));
+        }
         JOptionPane.showMessageDialog(this, "Carro Creado con Exito!!");
         jp_CrearCarros.setVisible(false);
         jp_fondo.setVisible(true);
+        //CREARCHIVO BIN
+                Carro p = carronuevo;
+        AdminCarros ap = new AdminCarros("./carros.nose");
+        ap.cargarArchivo();
+        ap.setCarro(p);
+        ap.escribirArchivo();
     }//GEN-LAST:event_jb_crearCarro1MouseClicked
 
     private void jb_IniciarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_IniciarMouseClicked
@@ -380,7 +414,37 @@ public class FramePrincipal extends javax.swing.JFrame {
         jp_CrearCarros.setVisible(false);
         Carrera.setVisible(true);
     }//GEN-LAST:event_jb_IniciarMouseClicked
-    
+
+    private void jc_Carro1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jc_Carro1ItemStateChanged
+
+        if (jc_Carro1.getSelectedIndex() >= 0) {
+            carroseleccionado1 = (Carro) jc_Carro1.getSelectedItem();
+            jl_MarcaCarro1.setText(carroseleccionado1.getMarca());
+            jl_ModeloCarro1.setText(carroseleccionado1.getModelo());
+            jl_VelocidadCarro1.setText(String.valueOf(carroseleccionado1.getVeocidad()));
+        }
+    }//GEN-LAST:event_jc_Carro1ItemStateChanged
+
+    private void jc_Carro2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jc_Carro2ItemStateChanged
+        if (jc_Carro2.getSelectedIndex() >= 0) {
+            carroseleccionado2 = (Carro) jc_Carro2.getSelectedItem();
+            jl_MarcaCarro2.setText(carroseleccionado2.getMarca());
+            jl_ModeloCarro2.setText(carroseleccionado2.getModelo());
+            jl_VelocidadCarro2.setText(String.valueOf(carroseleccionado2.getVeocidad()));
+        }
+    }//GEN-LAST:event_jc_Carro2ItemStateChanged
+
+    private void IniciarCarreraMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IniciarCarreraMouseClicked
+        try {
+            BarraProgreso1 = new Hilo(this.BarraCarro1,carroseleccionado1.getVeocidad());
+            BarraProgreso2 = new Hilo(this.BarraCarro2,carroseleccionado2.getVeocidad());
+            BarraProgreso1.start();
+            BarraProgreso2.start();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_IniciarCarreraMouseClicked
+
     public static void main(String args[]) {
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -417,7 +481,6 @@ public class FramePrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel Carro1;
     private javax.swing.JLabel Carro2;
     private javax.swing.JButton IniciarCarrera;
-    private javax.swing.JLabel JL_MarcaCarro2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -442,6 +505,7 @@ public class FramePrincipal extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jc_Carro1;
     private javax.swing.JComboBox<String> jc_Carro2;
     private javax.swing.JLabel jl_MarcaCarro1;
+    private javax.swing.JLabel jl_MarcaCarro2;
     private javax.swing.JLabel jl_ModeloCarro1;
     private javax.swing.JLabel jl_ModeloCarro2;
     private javax.swing.JLabel jl_VelocidadCarro1;
@@ -453,4 +517,7 @@ public class FramePrincipal extends javax.swing.JFrame {
     private javax.swing.JTextField jt_ModeloCarro;
     // End of variables declaration//GEN-END:variables
     ArrayList<Carro> carros = new ArrayList();
+    Hilo BarraProgreso1,BarraProgreso2;
+    Carro carroseleccionado1;
+    Carro carroseleccionado2;
 }

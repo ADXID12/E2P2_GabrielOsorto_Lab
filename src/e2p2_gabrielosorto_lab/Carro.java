@@ -1,9 +1,12 @@
 package e2p2_gabrielosorto_lab;
 
-public class Carro {
+import java.io.Serializable;
+
+public class Carro implements Serializable{
 
     private String marca, modelo;
     private int veocidad;
+    private static final long SerialVersionUID = 555L;
 
     public Carro() {
     }
@@ -40,7 +43,7 @@ public class Carro {
 
     @Override
     public String toString() {
-        return "Carro{" + "marca=" + marca + ", modelo=" + modelo + ", veocidad=" + veocidad + '}';
+        return marca;
     }
 
 }

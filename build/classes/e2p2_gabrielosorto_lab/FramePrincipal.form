@@ -139,14 +139,14 @@
         <Component class="javax.swing.JComboBox" name="jc_Carro1">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="4">
-                <StringItem index="0" value="Item 1"/>
-                <StringItem index="1" value="Item 2"/>
-                <StringItem index="2" value="Item 3"/>
-                <StringItem index="3" value="Item 4"/>
+              <StringArray count="1">
+                <StringItem index="0" value=" "/>
               </StringArray>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="jc_Carro1ItemStateChanged"/>
+          </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
@@ -159,14 +159,12 @@
         <Component class="javax.swing.JComboBox" name="jc_Carro2">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="4">
-                <StringItem index="0" value="Item 1"/>
-                <StringItem index="1" value="Item 2"/>
-                <StringItem index="2" value="Item 3"/>
-                <StringItem index="3" value="Item 4"/>
-              </StringArray>
+              <StringArray count="0"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="jc_Carro2ItemStateChanged"/>
+          </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
@@ -318,7 +316,7 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="javax.swing.JLabel" name="JL_MarcaCarro2">
+        <Component class="javax.swing.JLabel" name="jl_MarcaCarro2">
           <Properties>
             <Property name="text" type="java.lang.String" value="jLabel14"/>
           </Properties>
@@ -383,7 +381,6 @@
                       <Group type="102" alignment="1" attributes="0">
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Component id="jLabel16" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="jSpinner2" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="jb_crearCarro1" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="153" max="-2" attributes="0"/>
@@ -407,6 +404,10 @@
                           <EmptySpace min="-2" pref="153" max="-2" attributes="0"/>
                           <Component id="jLabel18" min="-2" max="-2" attributes="0"/>
                       </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="110" max="-2" attributes="0"/>
+                          <Component id="jsp_velocidad" min="-2" pref="111" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
               </Group>
@@ -428,7 +429,7 @@
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="jLabel16" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jSpinner2" min="-2" max="-2" attributes="0"/>
+                  <Component id="jsp_velocidad" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                   <Component id="jb_crearCarro1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="57" max="32767" attributes="0"/>
@@ -495,7 +496,7 @@
             <Property name="text" type="java.lang.String" value="Modelo"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JSpinner" name="jSpinner2">
+        <Component class="javax.swing.JSpinner" name="jsp_velocidad">
         </Component>
         <Component class="javax.swing.JButton" name="jb_crearCarro1">
           <Properties>
@@ -559,8 +560,8 @@
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
                           <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="BarraCarro1" alignment="1" min="-2" pref="459" max="-2" attributes="0"/>
-                              <Component id="BarraCarro2" min="-2" pref="459" max="-2" attributes="0"/>
+                              <Component id="BarraCarro2" alignment="1" min="-2" pref="459" max="-2" attributes="0"/>
+                              <Component id="BarraCarro1" min="-2" pref="459" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                       </Group>
@@ -587,11 +588,11 @@
                   <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                   <Component id="Carro1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="BarraCarro2" min="-2" pref="21" max="-2" attributes="0"/>
+                  <Component id="BarraCarro1" min="-2" pref="21" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="Carro2" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="BarraCarro1" min="-2" pref="24" max="-2" attributes="0"/>
+                  <Component id="BarraCarro2" min="-2" pref="24" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                   <Component id="IniciarCarrera" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="43" max="32767" attributes="0"/>
@@ -646,7 +647,7 @@
             <Property name="text" type="java.lang.String" value="Carro1"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JProgressBar" name="BarraCarro2">
+        <Component class="javax.swing.JProgressBar" name="BarraCarro1">
         </Component>
         <Component class="javax.swing.JLabel" name="Carro2">
           <Properties>
@@ -659,7 +660,7 @@
             <Property name="text" type="java.lang.String" value="Carro2"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JProgressBar" name="BarraCarro1">
+        <Component class="javax.swing.JProgressBar" name="BarraCarro2">
         </Component>
         <Component class="javax.swing.JButton" name="IniciarCarrera">
           <Properties>
@@ -668,6 +669,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Iniciar"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="IniciarCarreraMouseClicked"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
